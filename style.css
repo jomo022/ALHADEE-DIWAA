@@ -511,7 +511,7 @@ header p {
     box-shadow:
         0 7px 18px rgba(255, 174, 146, 0.18);
 }
-}/* ==============================
+/* ==============================
    ALHADEE DIWAA - LUXURY PEACH
    ============================== */
 
@@ -1559,4 +1559,326 @@ button:hover {
     font-size: 13px;
     font-weight: 500;
     cursor: pointer;
+}/* Welcome Section */
+.brainstorm > h2 {
+    font: size 70px;
+    font-weight: 500;
+    color: #4A403C;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.brainstorm > p {
+    text-align: center;
+    color: #8A756D;
+    font-size: 18px;
+    margin: 0;
+}
+
+.section-label {
+    color: #C9A66B;
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}.brainstorm > span {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #C9A66B;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}/* Welcome Clean Style */
+
+.brainstorm {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.brainstorm > h2::after {
+    display: none;
+}
+
+.brainstorm > h2 {
+    margin-bottom: 8px;
+}
+
+.brainstorm > p {
+    margin-bottom: 0;
+}/* Welcome Background */
+
+body {
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 174, 146, 0.18),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(251, 212, 173, 0.20),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(248, 215, 193, 0.18),
+            transparent 35%
+        ),
+        #FFF9F5;
+}/* ==============================
+   MINIMAL LUXURY SPARKLE
+   ============================== */
+
+.brainstorm {
+    position: relative;
+    overflow: visible;
+}
+
+/* ประกายหลายจุด */
+.brainstorm::before {
+    content: "✦   ✧        ✦              ✧";
+    position: absolute;
+    top: 15px;
+    left: 5%;
+    width: 90%;
+    height: auto;
+    background: none;
+    filter: none;
+    color: rgba(201, 166, 107, 0.45);
+    font-size: 17px;
+    letter-spacing: 18px;
+    line-height: 1;
+    z-index: 0;
+    pointer-events: none;
+    animation: sparkle 4s ease-in-out infinite;
+}
+
+.brainstorm::after {
+    content: "✧       ✦             ✧       ✦";
+    position: absolute;
+    right: 3%;
+    bottom: 20px;
+    width: 94%;
+    height: auto;
+    background: none;
+    filter: none;
+    color: rgba(255, 174, 146, 0.40);
+    font-size: 14px;
+    letter-spacing: 25px;
+    line-height: 1;
+    z-index: 0;
+    pointer-events: none;
+    animation: sparkle 4.5s ease-in-out infinite reverse;
+}
+
+/* ประกายวิบวับ */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.25;
+        transform: scale(0.85);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.08);
+    }
+}/* ==============================
+   LUXURY DECORATIVE LINES
+   ============================== */
+
+.brainstorm {
+    position: relative;
+}
+
+/* เส้นด้านบน */
+.brainstorm::marker {
+    display: none;
+}
+
+.brainstorm .section-label::before,
+.brainstorm .section-label::after {
+    content: "";
+    display: inline-block;
+    width: 55px;
+    height: 1px;
+    vertical-align: middle;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 166, 107, 0.45)
+    );
+}
+
+.brainstorm .section-label::before {
+    margin-right: 15px;
+}
+
+.brainstorm .section-label::after {
+    margin-left: 15px;
+    background: linear-gradient(
+        90deg,
+        rgba(201, 166, 107, 0.45),
+        transparent
+    );
+}
+
+/* เส้นบางใต้ชื่อชมรม */
+.brainstorm > p {
+    position: relative;
+    display: block;
+}
+
+.brainstorm > p::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 1px;
+    margin: 16px auto 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 166, 107, 0.35),
+        transparent
+    );
+}/* ==============================
+   WELCOME LUXURY DECORATION
+   ============================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* เส้นซ้าย-ขวาของ WELCOME */
+.hero .section-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.hero .section-label::before,
+.hero .section-label::after {
+    content: "";
+    width: 70px;
+    height: 1px;
+    display: block;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 166, 107, 0.55)
+    );
+}
+
+.hero .section-label::after {
+    background: linear-gradient(
+        90deg,
+        rgba(201, 166, 107, 0.55),
+        transparent
+    );
+}
+
+/* เส้นตกแต่งใต้ชื่อชมรม */
+.hero > span::before {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 1px;
+    margin: 0 auto 14px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 166, 107, 0.45),
+        transparent
+    );
+}
+
+/* เพิ่มระยะห่าง BRAINSTORMING กับกล่องเสนอ */
+.brainstorm .section-label {
+    margin-bottom: 30px;
+}/* ขนาดข้อความ Welcome */
+.hero .section-label {
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+
+.hero h2 {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.hero > p:not(.section-label) {
+         font-size: 18px;   
+           font-weight: 400;
+        }/* กรอบ Welcome ขนาดพอดี */
+.hero {
+    max-width: 750px;
+    padding: 40px 30px;
+    margin: 35px auto;
+    border-radius: 24px;
+}/* ✦ ดาวตกทั่วหน้าเว็บ */
+.shooting-stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.shooting-stars span {
+    position: absolute;
+    top: -20px;
+    color: #C9A66B;
+    font-size: 16px;
+    opacity: 0;
+    animation: shootingStar 3s linear infinite;
+}
+
+.shooting-stars span:nth-child(1) {
+    left: 15%;
+    animation-delay: 1s;
+}
+
+.shooting-stars span:nth-child(2) {
+    left: 40%;
+    animation-delay: 4s;
+    font-size: 12px;
+}
+
+.shooting-stars span:nth-child(3) {
+    left: 68%;
+    animation-delay: 2.5s;
+    font-size: 14px;
+}
+
+.shooting-stars span:nth-child(4) {
+    left: 85%;
+    animation-delay: 5s;
+    font-size: 11px;
+}
+
+@keyframes shootingStar {
+    0% {
+        transform: translate(0, -20px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.7;
+    }
+
+    45% {
+        opacity: 0.5;
+    }
+
+    70% {
+        transform: translate(-180px, 500px) rotate(20deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-250px, 700px) rotate(25deg);
+        opacity: 0;
+    }
 }
