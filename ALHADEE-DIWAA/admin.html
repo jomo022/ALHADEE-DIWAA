@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ผู้ตรวจสอบ | ALHADEE DIWAA</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <div class="logo">
+            🧠
+        </div>
+
+        <div>
+            <h2>ชมรมเยาวชนคนอัลฮาดี</h2>
+
+            <p>ALHADEE DIWAA</p>
+        </div>
+
+    </header>
+
+
+    <main class="admin-page">
+
+        <p class="form-label">
+            ALHADEE DIWAA
+        </p>
+
+        <h1>
+            ข้อเสนอจากสมาชิก
+        </h1>
+
+        <p class="admin-description">
+            รายการความคิดเห็นและไอเดียทั้งหมด
+        </p>
+<div class="filter-box">
+    <label for="statusFilter">กรองตามสถานะ</label>
+
+    <select id="statusFilter"onchange="console.log(this.value); loadProposals()">
+        <option value="ทั้งหมด">ทั้งหมด</option>
+        <option value="รอตรวจสอบ">🟡 รอตรวจสอบ</option>
+        <option value="รับเรื่อง">🔵 รับเรื่อง</option>
+        <option value="ดำเนินการแล้ว">🟢 ดำเนินการแล้ว</option>
+        <option value="ไม่อนุมัติ">🔴 ไม่อนุมัติ</option>
+    </select>
+</div>
+
+        <div id="proposalList">
+
+            <div class="empty">
+                กำลังโหลดข้อเสนอ...
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> 
+    <script> const ADMIN_EMAIL = "sayney112@gmail.com";
+
+const userEmail = localStorage.getItem("userEmail");
+
+if (userEmail !== ADMIN_EMAIL) {
+    alert("หน้านี้สำหรับผู้ดูแลระบบเท่านั้น ❌");
+    window.location.href = "index.html";
+}</script>
+}
+
+}
+
+    <script>
+
+        const SUPABASE_URL =
+            "https://brlelikwcfihbdwsgtoj.supabase.co";
+
+
+        const SUPABASE_KEY =
+            "sb_publishable_SsUs4hAdKY_oTsn23yCDMA_3XMQUqbN";
+
+
+        const supabaseClient =
+            window.supabase.createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY
+            );
+
+
+        loadProposals();
+
+
+        async function loadProposals() {
+    const filter =
+         document.getElementById("statusFilter").value;
+            const list =
+                document.getElementById(
+                    "proposalList"
+                );
+
+
+            let query =
+                supabaseClient
+                .from("proposals")
+                 .select("*");
+
+                if (filter !== "ทั้งหมด") {
+                query = query.eq("status", filter);
+}
+
+            const { data, error } =
+             await query
+              .order(
+            "created_at",
+        {
+                ascending: false
+        }
+    );
+
+
+            if (error) {
+
+                console.error(error);
+
+                list.innerHTML = `
+                    <div class="empty">
+
+                        โหลดข้อมูลไม่สำเร็จ ❌
+
+                        <br><br>
+
+                        ${error.message}
+
+                    </div>
+                `;
+
+                return;
+            }
+
+
+            if (!data || data.length === 0) {
+
+                list.innerHTML = `
+                    <div class="empty">
+                        ยังไม่มีข้อเสนอ
+                    </div>
+                `;
+
+                return;
+            }
+
+
+            list.innerHTML = "";
+
+
+            data.forEach(function(proposal) {
+
+                list.innerHTML += `
+
+                    <div class="proposal-card">
+
+                        <div class="proposal-top">
+
+                            <span>
+                                ${proposal.topic}
+                            </span>
+
+                            <small>
+                                ${new Date(
+                                    proposal.created_at
+                                ).toLocaleString("th-TH")}
+                            </small>
+
+                        </div>
+
+
+                        <h2>
+                            ${proposal.name}
+                        </h2>
+
+
+                        <div class="proposal-section">
+
+                            <strong>
+                                รายละเอียด
+                            </strong>
+
+                            <p>
+                                ${proposal.detail}
+                            </p>
+
+                        </div>
+
+
+                        <div class="proposal-section">
+
+                            <strong>
+                                หมายเหตุ
+                            </strong>
+
+                            <p>
+                                ${proposal.note || "-"}
+                            </p>
+
+                        </div>
+<div class="proposal-section">
+    <strong>
+        🔗 ลิงก์ที่แนบมา
+    </strong>
+
+    <p>
+        ${
+            proposal.link
+                ? `<a
+                    href="${proposal.link}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="link-btn"
+                >
+                    🔗 เปิดลิงก์
+                </a>`
+                : "-"
+        }
+    </p>
+</div>
+
+                        <div class="proposal-section">
+
+                            <strong>
+                                สถานะ
+                            </strong>
+
+                            <select
+                             class="status-select status-${proposal.status}"
+                            onchange="
+                             updateStatus(
+                             ${proposal.id},
+                             this.value
+                             )
+                             "
+                            >
+
+                                <option
+                                    value="รอตรวจสอบ"
+                                    ${proposal.status === "รอตรวจสอบ" ? "selected" : ""}
+                                >
+                                    🟡 รอตรวจสอบ
+                                </option>
+
+
+                                <option
+                                    value="รับเรื่อง"
+                                    ${proposal.status === "รับเรื่อง" ? "selected" : ""}
+                                >
+                                    🔵 รับเรื่อง
+                                </option>
+
+
+                                <option
+                                    value="ดำเนินการแล้ว"
+                                    ${proposal.status === "ดำเนินการแล้ว" ? "selected" : ""}
+                                >
+                                    🟢 ดำเนินการแล้ว
+                                </option>
+
+
+                                <option
+                                    value="ไม่อนุมัติ"
+                                    ${proposal.status === "ไม่อนุมัติ" ? "selected" : ""}
+                                >
+                                    🔴 ไม่อนุมัติ
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            });
+
+        }
+
+
+        async function updateStatus(
+            id,
+            newStatus
+        ) {
+
+            const { error } =
+                await supabaseClient
+                .from("proposals")
+                .update({
+                    status: newStatus
+                })
+                .eq("id", id);
+
+
+            if (error) {
+
+                console.error(error);
+
+                alert(
+                    "เปลี่ยนสถานะไม่สำเร็จ ❌\n\n" +
+                    error.message
+                );
+
+                return;
+            }
+
+
+            alert(
+                "เปลี่ยนสถานะเรียบร้อยแล้ว ✅"
+            );
+
+        }
+
+    </script>
+
+</body>
+
+</html>

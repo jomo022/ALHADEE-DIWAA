@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ชมรมคนอัลฮาดี</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+    🧠
+</div>
+
+<div>
+    <h2>ชมรมเยาวชนคนอัลฮาดี</h2>
+    <p>ALHADEE DIWAA</p>
+</div>
+
+<a href="admin.html" class="admin-btn">แอดมิน</a>
+<button
+    type="button"
+    class="logout-btn"
+    onclick="logout()"
+>
+    ออกจากระบบ
+</button>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <p class="section-label">WELCOME</p>
+
+                <h2>ยินดีต้อนรับสู่</h2>
+
+                <p>ชมรมเยาวชนคนอัลฮาดี</p>
+
+                <span>AL-HADEE STUDENT CLUB</span>
+
+        </section>
+
+
+        <section class="brainstorm">
+
+            <p class="section-label">BRAINSTORMING</p>
+
+
+
+            <div class="cards">
+
+                <div class="card">
+                    <div class="card-icon">💡</div>
+                    <h3>เสนอความคิดเห็น</h3>
+                    <p>เสนอความคิดเห็นทั่วไป</p>
+                    <button onclick="openForm('เสนอความคิดเห็น')">เข้าใช้งาน</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🌱</div>
+                    <h3>เสนอไอเดียอีดเล็ก</h3>
+                    <p>เสนอไอเดียขนาดเล็ก</p>
+                    <button onclick="openForm('เสนอไอเดียอีดเล็ก')">เข้าใช้งาน</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🚀</div>
+                    <h3>เสนอไอเดียอีดใหญ่</h3>
+                    <p>เสนอแนวคิดหรือโครงการขนาดใหญ่</p>
+                    <button onclick="openForm('เสนอไอเดียอีดใหญ่')">เข้าใช้งาน</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">🕌</div>
+                    <h3>เสนองานสุเหร่า</h3>
+                    <p>เสนองานหรือความคิดเห็นเกี่ยวกับสุเหร่า</p>
+                    <button onclick="openForm('เสนองานสุเหร่า')">เข้าใช้งาน</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <h3>เสนอโครงการเพิ่มเติม</h3>
+                    <p>เสนอแนวคิดสำหรับโครงการเพิ่มเติม</p>
+                    <button onclick="openForm('เสนอโครงการเพิ่มเติม')">เข้าใช้งาน</button>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main><!-- FORM MODAL -->
+
+<div id="formModal" class="modal">
+
+    <div class="form-box">
+
+        <button class="close-btn" onclick="closeForm()">
+            ×
+        </button>
+
+        <p class="form-label">
+            BRAINSTORMING
+        </p>
+
+        <h2 id="formTitle">
+            เสนอความคิดเห็น
+        </h2>
+
+
+        <form onsubmit="submitForm(event)">
+
+            <label>
+                ชื่อคนเสนอ
+            </label>
+
+            <input
+                type="text"
+                id="name"
+                placeholder="กรอกชื่อของคุณ"
+                required
+            >
+
+
+            <label>
+                รายละเอียด
+            </label>
+
+            <textarea
+                id="detail"
+                placeholder="กรอกรายละเอียดความคิดเห็นหรือไอเดีย"
+                required
+            ></textarea>
+
+
+            <label>
+                หมายเหตุ
+            </label>
+
+            <textarea
+                id="note"
+                placeholder="หมายเหตุเพิ่มเติม (ถ้ามี)"
+            ></textarea>
+            <label>แนบลิงก์</label>
+            <input
+            type="url"
+    id="link"
+    placeholder="https://..."
+>
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                ส่งข้อเสนอ
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+     <script src="script.js"></script>
+     <script>
+    const userEmail = localStorage.getItem("userEmail");
+
+    if (!userEmail) {
+        window.location.href = "login.html";
+    }
+</script>
+     <footer class="site-footer">
+    <p>© 2026 ชมรมเยาวชนคนอัลฮาดี</p>
+    <p>📍 มัสยิดอัลฮาดีเกาะไร่</p>
+
+    <span>ALHADEE DIWAA</span>
+</footer>
+</body><!-- ✦ ดาวตก -->
+<div class="shooting-stars">
+    <span>✧</span>
+    <span>✦</span>
+    <span>✧</span>
+    <span>✦</span>
+</div>
+
+</html>

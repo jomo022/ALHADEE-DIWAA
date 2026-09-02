@@ -1,0 +1,1884 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f6f6f4;
+    color: #191a1d;
+}
+
+
+/* HEADER */
+
+header {
+    height: 75px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 7%;
+}
+
+
+.logo {
+    width: 42px;
+    height: 42px;
+
+    background: #191a1d;
+    color: white;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 12px;
+}
+
+
+header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+header p {
+    margin: 2px 0 0;
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #999;
+}
+
+
+/* HERO */
+
+.hero {
+    max-width: 1100px;
+    margin: auto;
+
+    padding: 90px 25px;
+}
+
+.hero p {
+    color: #999;
+    letter-spacing: 3px;
+    font-size: 11px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+}
+
+.hero span {
+    color: #777;
+}
+
+
+/* BRAINSTORM */
+
+.brainstorm {
+    max-width: 1100px;
+    margin: auto;
+
+    padding: 40px 25px 100px;
+}
+
+.brainstorm h2 {
+    font-size: 32px;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+
+.card {
+    background: white;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    min-height: 180px;
+
+    transition: 0.2s;
+}
+
+
+.card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 30px
+        rgba(0,0,0,0.08);
+}
+
+
+.card h3 {
+    margin-top: 0;
+}
+
+
+.card p {
+    color: #888;
+
+    font-size: 14px;
+}
+
+
+.card button {
+    margin-top: 20px;
+
+    background: #191a1d;
+    color: white;
+
+    border: none;
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+}/* FORM MODAL */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.55);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 999;
+}
+
+
+.modal.show {
+    display: flex;
+}
+
+
+.form-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 550px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    padding: 35px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,0.25);
+}
+
+
+.close-btn {
+    position: absolute;
+
+    top: 12px;
+    right: 17px;
+
+    border: none;
+
+    background: none;
+
+    font-size: 28px;
+
+    color: #888;
+
+    cursor: pointer;
+}
+
+
+.form-label {
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #999;
+
+    margin: 0;
+}
+
+
+.form-box h2 {
+    margin-top: 7px;
+
+    margin-bottom: 25px;
+}
+
+
+.form-box label {
+    display: block;
+
+    font-size: 14px;
+
+    margin-bottom: 6px;
+}
+
+
+.form-box input,
+.form-box textarea {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 9px;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+
+    outline: none;
+}
+
+
+.form-box textarea {
+
+    min-height: 110px;
+
+    resize: vertical;
+}
+
+
+.form-box input:focus,
+.form-box textarea:focus {
+
+    border-color: #191a1d;
+}
+
+
+.submit-btn {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #191a1d;
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}
+
+
+.submit-btn:hover {
+
+    opacity: 0.85;
+}/* ADMIN PAGE */
+
+.admin-page {
+
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding: 70px 25px 100px;
+
+}
+
+
+.admin-page h1 {
+
+    font-size: 42px;
+
+    margin: 10px 0;
+
+}
+
+
+.admin-description {
+
+    color: #777;
+
+    margin-bottom: 35px;
+
+}
+
+
+.proposal-card {
+
+    background: white;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.proposal-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+
+}
+
+
+.proposal-top span {
+
+    background: #191a1d;
+
+    color: white;
+
+    padding: 7px 12px;
+
+    border-radius: 7px;
+
+    font-size: 12px;
+
+}
+
+
+.proposal-top small {
+
+    color: #999;
+
+}
+
+
+.proposal-card h2 {
+
+    margin: 10px 0 25px;
+
+}
+
+
+.proposal-section {
+
+    margin-bottom: 18px;
+
+}
+
+
+.proposal-section strong {
+
+    font-size: 13px;
+
+}
+
+
+.proposal-section p {
+
+    color: #666;
+
+    line-height: 1.7;
+
+}
+
+
+.empty {
+
+    background: white;
+
+    border: 1px solid #e5e5e5;
+
+    border-radius: 15px;
+
+    padding: 50px;
+
+    text-align: center;
+
+    color: #999;
+
+}
+
+
+.delete-btn {
+
+    border: none;
+
+    background: #191a1d;
+
+    color: white;
+
+    padding: 9px 14px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+}.status-select {
+    width: 100%;
+    max-width: 300px;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 9px;
+
+    background: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    cursor: pointer;
+}.admin-btn {
+    margin-left: auto;
+    padding: 9px 18px;
+
+    background: #FFFFFF;
+    color: #8A6255;
+
+    border: 1px solid #F1C7B5;
+    border-radius: 12px;
+
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+
+    box-shadow: 0 4px 12px rgba(255, 174, 146, 0.10);
+
+    transition: 0.25s ease;
+}
+
+.admin-btn:hover {
+    background: #FFF4EE;
+    color: #4A403C;
+
+    border-color: #FFAE92;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(255, 174, 146, 0.18);
+}
+/* ==============================
+   ALHADEE DIWAA - LUXURY PEACH
+   ============================== */
+
+:root {
+    --peach: #FFAE92;
+    --peach-light: #FBD4AD;
+    --cream-pink: #F8D7C1;
+    --cream: #FFF9F5;
+    --white: #FFFFFF;
+    --text: #4A403C;
+    --text-light: #85756E;
+    --gold: #C9A66B;
+}
+
+/* พื้นหลังเว็บ */
+body {
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(251, 212, 173, 0.35),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(248, 215, 193, 0.45),
+            transparent 35%
+        ),
+        var(--cream);
+
+    color: var(--text);
+}
+
+/* Header */
+header {
+    background: rgba(255, 255, 255, 0.88);
+    border-bottom: 1px solid rgba(201, 166, 107, 0.20);
+    box-shadow: 0 4px 20px rgba(120, 80, 60, 0.08);
+
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    position: relative;
+    z-index: 10;
+}
+
+header h2 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+header p {
+    margin: 4px 0 0;
+    font-size: 12px;
+    color: var(--peach);
+    letter-spacing: 3px;
+}
+
+header .logo {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #FFF8F3,
+        #FBD4AD
+    );
+
+    border: 1px solid rgba(201, 166, 107, 0.35);
+    border-radius: 15px;
+
+    font-size: 27px;
+
+    box-shadow:
+        0 6px 18px rgba(255, 174, 146, 0.16);
+
+    transition: 0.3s ease;
+}
+
+header .logo:hover {
+    transform: translateY(-2px) rotate(2deg);
+
+    box-shadow:
+        0 9px 22px rgba(255, 174, 146, 0.22);
+}
+
+/* ชื่อระบบ */
+header h2 {
+    margin: 0;
+
+    color: #4A403C;
+
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.3;
+
+    letter-spacing: 0.3px;
+}
+
+header p {
+    margin: 4px 0 0;
+
+    color: var(--peach);
+
+    font-size: 11px;
+    font-weight: 500;
+
+    letter-spacing: 3px;
+    line-height: 1.4;
+}
+
+/* ปุ่มทั่วไป */
+button {
+    background: var(--peach);
+    color: white;
+    border-radius: 12px;
+    border: none;
+    transition: 0.25s ease;
+}
+
+button:hover {
+    background: #F49A7B;
+    transform: translateY(-1px);
+}
+
+/* การ์ด */
+.card {
+    background: var(--white);
+    border: 1px solid var(--cream-pink);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(255, 174, 146, 0.12);
+    transition: 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(255, 174, 146, 0.20);
+}
+
+/* หัวข้อ */
+h1,
+h2,
+h3 {
+    color: var(--text);
+}
+
+/* ข้อความรอง */
+p {
+    color: var(--text-light);
+}
+
+/* ปุ่มแอดมิน */
+.admin-btn {
+    background: #FFF4EE;
+    color: #8A6255;
+    border: 1px solid var(--cream-pink);
+    border-radius: 12px;
+}
+
+.admin-btn:hover {
+    background: var(--cream-pink);
+    color: var(--text);
+}
+
+/* กล่องฟอร์ม */
+.form-box {
+    background: var(--white);
+    border: 1px solid var(--cream-pink);
+    border-radius: 22px;
+    box-shadow: 0 15px 45px rgba(120, 80, 60, 0.15);
+}
+
+/* ช่องกรอก */
+input,
+textarea,
+select {
+    border: 1px solid #EBD8CE;
+    border-radius: 12px;
+    background: #FFFCFA;
+    color: var(--text);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--peach);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 174, 146, 0.15);
+}
+
+/* ป้ายหัวข้อ */
+.form-label {
+    color: var(--peach);
+    letter-spacing: 2px;
+}
+
+/* หน้าผู้ดูแล */
+.admin-page {
+    color: var(--text);
+}
+
+.admin-description {
+    color: var(--text-light);
+}
+
+/* การ์ดข้อเสนอ */
+.proposal-card {
+    background: var(--white);
+    border: 1px solid var(--cream-pink);
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(255, 174, 146, 0.10);
+}/* ==============================
+   HERO - LUXURY PEACH
+   ============================== */
+
+.hero {
+    position: relative;
+    margin: 35px auto;
+    padding: 55px 35px;
+    max-width: 1100px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(255, 174, 146, 0.35),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(251, 212, 173, 0.45),
+            transparent 35%
+        ),
+        #FFFDFC;
+
+    border: 1px solid rgba(201, 166, 107, 0.18);
+    border-radius: 30px;
+
+    box-shadow:
+        0 15px 45px rgba(120, 80, 60, 0.10);
+}
+
+.hero p {
+    margin-bottom: 10px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+    line-height: 1.5;
+
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin: 0;
+
+    color: var(--text);
+    font-size: 38px;
+    line-height: 1.45;
+    font-weight: 600;
+}
+
+.hero span {
+    display: inline-block;
+    margin-top: 18px;
+
+    color: var(--text-light);
+    font-size: 15px;
+}/* ==============================
+   BRAINSTORM - LUXURY PEACH
+   ============================== */
+
+.brainstorm {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.brainstorm > h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--text);
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.cards .card {
+    padding: 25px 18px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid var(--cream-pink);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(120, 80, 60, 0.08);
+}
+
+.cards .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 30px rgba(255, 174, 146, 0.18);
+}/* ==============================
+   CARD DETAILS
+   ============================== */
+
+.cards .card {
+    position: relative;
+    overflow: hidden;
+}
+
+.cards .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--peach),
+        var(--peach-light),
+        var(--gold)
+    );
+}
+
+.cards .card h3 {
+    margin-top: 8px;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.cards .card p {
+    font-size: 13px;
+    line-height: 1.7;
+}/* ==============================
+   MAIN BUTTON - LUXURY PEACH
+   ============================== */
+
+button {
+    padding: 12px 22px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+
+    background: linear-gradient(
+        135deg,
+        var(--peach),
+        #F7B99D
+    );
+
+    box-shadow:
+        0 6px 18px rgba(255, 174, 146, 0.25);
+}
+
+button:hover {
+    background: linear-gradient(
+        135deg,
+        #F49A7B,
+        var(--peach)
+    );
+
+    box-shadow:
+        0 8px 22px rgba(255, 174, 146, 0.32);
+}.cards .card button {
+    width: 100%;
+    min-height: 44px;
+    box-sizing: border-box;
+}/* การ์ดทั้ง 5 ใบให้สูงเท่ากัน */
+
+.cards {
+    align-items: stretch;
+}
+
+.cards .card {
+    min-height: 240px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards .card button {
+    margin-top: auto;
+}/* ==============================
+   CARD - ICON & TYPOGRAPHY
+   ============================== */
+
+.cards .card {
+    padding: 28px 20px 20px;
+    text-align: center;
+}
+
+.cards .card h3 {
+    font-size: 18px;
+    line-height: 1.5;
+    margin: 12px 0 8px;
+}
+
+.cards .card p {
+    font-size: 13px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}/* วงกลมไอคอนการ์ด */
+
+.card-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #FFF4EE;
+    border-radius: 50%;
+
+    font-size: 32px;
+
+    box-shadow: 0 6px 18px rgba(255, 174, 146, 0.12);
+}
+
+.cards .card h3 {
+    margin-top: 16px;
+}/* ==============================
+   CARD BUTTON - LUXURY DARK
+   ============================== */
+
+.cards .card button {
+    background: #4A403C;
+    color: white;
+
+    border: none;
+    border-radius: 12px;
+
+    padding: 11px 18px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    box-shadow: 0 5px 14px rgba(74, 64, 60, 0.18);
+
+    transition: 0.25s ease;
+}
+
+.cards .card button:hover {
+    background: #302A27;
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(74, 64, 60, 0.25);
+}/* ==============================
+   SECTION LABEL
+   ============================== */
+
+.section-label {
+    margin: 0 0 6px;
+
+    text-align: center;
+
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}/* ==============================
+   BRAINSTORM TITLE DECORATION
+   ============================== */
+
+.brainstorm > h2 {
+    margin-bottom: 30px;
+}
+
+.brainstorm > h2::after {
+    content: "";
+    display: block;
+
+    width: 45px;
+    height: 2px;
+
+    margin: 12px auto 0;
+
+    background: var(--peach);
+    border-radius: 10px;
+}/* ==============================
+   SOFT BACKGROUND DECORATION
+   ============================== */
+
+.brainstorm {
+    position: relative;
+}
+
+.brainstorm::before,
+.brainstorm::after {
+    content: "";
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 174, 146, 0.08);
+
+    filter: blur(5px);
+
+    z-index: -1;
+}
+
+.brainstorm::before {
+    top: 20px;
+    left: -80px;
+}
+
+.brainstorm::after {
+    bottom: 0;
+    right: -80px;
+}/* ==============================
+   FORM TITLE
+   ============================== */
+
+.form-box h2 {
+    margin-top: 8px;
+    margin-bottom: 24px;
+
+    color: var(--text);
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.4;
+}/* ==============================
+   FORM CLOSE BUTTON
+   ============================== */
+
+.close {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #FFFFFF;
+    color: #777;
+
+    border: none;
+    border-radius: 15px;
+
+    font-size: 24px;
+    font-weight: 400;
+
+    box-shadow: 0 8px 22px rgba(120, 80, 60, 0.08);
+
+    transition: 0.25s ease;
+}
+
+.close:hover {
+    background: #FFF4EE;
+    color: var(--text);
+
+    transform: rotate(5deg);
+}/* ==============================
+   FORM INPUT - LUXURY
+   ============================== */
+
+.form-box input,
+.form-box textarea {
+    transition: 0.25s ease;
+}
+
+.form-box input:hover,
+.form-box textarea:hover {
+    border-color: #E3B9A7;
+}
+
+.form-box input:focus,
+.form-box textarea:focus {
+    border-color: var(--peach);
+    background: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(255, 174, 146, 0.12);
+}/* ==============================
+   FORM LABEL - LUXURY
+   ============================== */
+
+.form-box label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #5A4C46;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}/* ==============================
+   FORM TEXTAREA
+   ============================== */
+
+.form-box textarea {
+    min-height: 110px;
+    resize: vertical;
+    line-height: 1.7;
+    padding: 13px 15px;
+}
+
+.form-box textarea::placeholder {
+    color: #B8AAA3;
+}/* ==============================
+   FORM SUBMIT BUTTON
+   ============================== */
+
+.form-box button[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+
+    padding: 13px 20px;
+
+    background: #4A403C;
+    color: #FFFFFF;
+
+    border: none;
+    border-radius: 13px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow: 0 7px 18px rgba(74, 64, 60, 0.18);
+
+    transition: 0.25s ease;
+}
+
+.form-box button[type="submit"]:hover {
+    background: #302A27;
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 22px rgba(74, 64, 60, 0.25);
+}/* ==============================
+   FORM SPACING
+   ============================== */
+
+.form-box label {
+    margin-top: 18px;
+}
+
+.form-box label:first-of-type {
+    margin-top: 0;
+}
+
+.form-box input,
+.form-box textarea {
+    margin-bottom: 2px;
+}/* ==============================
+   FORM BOX - LUXURY SHADOW
+   ============================== */
+
+.form-box {
+    border: 1px solid rgba(201, 166, 107, 0.25);
+    box-shadow:
+        0 20px 55px rgba(74, 64, 60, 0.14),
+        0 5px 18px rgba(255, 174, 146, 0.10);
+
+    backdrop-filter: blur(8px);
+}/* ==============================
+   FORM MODAL BACKDROP
+   ============================== */
+
+.modal {
+    background: rgba(74, 64, 60, 0.38);
+    backdrop-filter: blur(5px);
+}/* ==============================
+   FORM GOLD DETAIL
+   ============================== */
+
+.form-box {
+    position: relative;
+    overflow: hidden;
+}
+
+.form-box::before {
+    content: "";
+    position: absolute;
+
+    top: 0;
+    left: 12%;
+    right: 12%;
+
+    height: 3px;
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        var(--gold),
+        transparent
+    );
+
+    border-radius: 0 0 10px 10px;
+}/* ==============================
+   FORM LABEL - GOLD
+   ============================== */
+
+.form-box .form-label {
+    margin-bottom: 5px;
+
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+    text-align: center;
+}/* ==============================
+   CARD HOVER EFFECT
+   ============================== */
+
+.cards .card {
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.cards .card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 35px rgba(120, 80, 60, 0.14);
+}
+
+.cards .card:hover .card-icon {
+    transform: scale(1.06);
+    box-shadow:
+        0 8px 22px rgba(255, 174, 146, 0.22);
+}
+
+.card-icon {
+    transition: 0.3s ease;
+}/* เส้นตกแต่งด้านบนของการ์ด */
+.cards .card {
+    position: relative;
+    overflow: hidden;
+}
+
+.cards .card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 4px;
+
+    background: linear-gradient(
+        90deg,
+        var(--peach),
+        var(--peach-light),
+        var(--gold)
+    );
+
+    border-radius: 0 0 10px 10px;
+}/* เส้นบนการ์ด - บังคับให้แสดง */
+.cards .card::before {
+    content: "" !important;
+    position: absolute !important;
+
+    top: 0 !important;
+    left: 0 !important;
+
+    width: 100% !important;
+    height: 4px !important;
+
+    display: block !important;
+
+    background: linear-gradient(
+        90deg,
+        #FFAE92,
+        #FBD4AD,
+        #C9A66B
+    ) !important;
+
+    z-index: 5 !important;
+    pointer-events: none !important;
+}/* ปุ่มเข้าใช้งาน - Luxury */
+.cards .card button {
+    border: 1px solid rgba(255, 174, 146, 0.25);
+
+    box-shadow:
+        0 6px 16px rgba(74, 64, 60, 0.16);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.cards .card button:hover {
+    background: #3A332F;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 22px rgba(74, 64, 60, 0.24);
+}/* แสงฟุ้งรอบโซนการ์ด */
+.brainstorm {
+    position: relative;
+}
+
+.brainstorm::after {
+    content: "";
+    position: absolute;
+
+    width: 320px;
+    height: 320px;
+
+    right: -120px;
+    bottom: -80px;
+
+    background: rgba(255, 174, 146, 0.10);
+
+    border-radius: 50%;
+
+    filter: blur(45px);
+
+    z-index: -1;
+    pointer-events: none;
+}/* เส้นตกแต่ง Hero */
+/* ==============================
+   FOOTER
+   ============================== */
+
+.site-footer {
+    margin-top: 70px;
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background: #FFF4EE;
+    border-top: 1px solid var(--cream-pink);
+
+    box-shadow: 0 -5px 20px rgba(255, 174, 146, 0.06);
+}
+
+.site-footer p {
+    margin: 0 0 6px;
+
+    color: #6A5A53;
+    font-size: 13px;
+}
+
+.site-footer span {
+    color: var(--gold);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}/* ==============================
+   MOBILE RESPONSIVE
+   ============================== */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 14px 5%;
+    }
+
+    header h2 {
+        font-size: 18px;
+    }
+
+    header p {
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+
+    header .logo {
+        width: 42px;
+        height: 42px;
+        font-size: 23px;
+    }
+
+    .admin-btn {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    .hero {
+        margin: 25px 15px;
+        padding: 40px 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .brainstorm {
+        padding: 0 15px;
+    }
+
+    .cards .card {
+        min-height: 220px;
+    }
+
+}/* ปุ่มปิดฟอร์ม */
+.form-box .close-btn {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #FFFFFF;
+    color: #8A7A73;
+
+    border: 1px solid #F1DDD3;
+    border-radius: 12px;
+
+    font-size: 22px;
+    font-weight: 400;
+
+    box-shadow: 0 5px 15px rgba(120, 80, 60, 0.08);
+
+    transition: 0.25s ease;
+}
+
+.form-box .close-btn:hover {
+    background: #FFF4EE;
+    color: #4A403C;
+
+    transform: rotate(5deg);
+    box-shadow: 0 7px 18px rgba(255, 174, 146, 0.16);
+}/* ==============================
+   ADMIN PROPOSAL CARD
+   ============================== */
+
+.proposal-card {
+    position: relative;
+    padding: 28px;
+    margin-bottom: 20px;
+
+    background: rgba(255, 255, 255, 0.92);
+
+    border: 1px solid rgba(251, 212, 173, 0.65);
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(120, 80, 60, 0.08);
+
+    transition: 0.25s ease;
+}
+
+.proposal-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 35px rgba(255, 174, 146, 0.14);
+}/* ==============================
+   ADMIN STATUS
+   ============================== */
+
+.status-select {
+    min-width: 180px;
+    padding: 10px 14px;
+
+    background: #FFFDFC;
+    color: #4A403C;
+
+    border: 1px solid #EBD8CE;
+    border-radius: 12px;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.status-select:hover {
+    border-color: var(--peach);
+    box-shadow: 0 4px 12px rgba(255, 174, 146, 0.10);
+}
+
+.status-select:focus {
+    outline: none;
+    border-color: var(--peach);
+
+    box-shadow:
+        0 0 0 3px rgba(255, 174, 146, 0.12);
+}/* สีสถานะ */
+.status-รอตรวจสอบ {
+    border-color: #F4D35E;
+    background: #FFFBEA;
+}
+
+.status-รับเรื่อง {
+    border-color: #8EC5E8;
+    background: #F0F8FD;
+}
+
+.status-ดำเนินการแล้ว {
+    border-color: #9DD6A8;
+    background: #F1FBF3;
+}
+
+.status-ไม่อนุมัติ {
+    border-color: #E9A1A1;
+    background: #FFF3F3;
+}
+
+.link-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 16px;
+    background: #FFF9F5;
+    color: #8A6255;
+    border: 1px solid #E8CFC2;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(120, 80, 60, 0.06);
+    transition: all 0.25s ease;
+}
+.link-btn:hover {
+    background: #FFAE92;
+    color: #FFFFFF;
+    border-color: #FFAE92;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 16px rgba(255, 174, 146, 0.20);
+}.logout-btn {
+    padding: 9px 18px;
+    background: #FFFFFF;
+    color: #8A6255;
+    border: 1px solid #F1C7B5;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+}/* Welcome Section */
+.brainstorm > h2 {
+    font: size 70px;
+    font-weight: 500;
+    color: #4A403C;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.brainstorm > p {
+    text-align: center;
+    color: #8A756D;
+    font-size: 18px;
+    margin: 0;
+}
+
+.section-label {
+    color: #C9A66B;
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}.brainstorm > span {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    color: #C9A66B;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 3px;
+}/* Welcome Clean Style */
+
+.brainstorm {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.brainstorm > h2::after {
+    display: none;
+}
+
+.brainstorm > h2 {
+    margin-bottom: 8px;
+}
+
+.brainstorm > p {
+    margin-bottom: 0;
+}/* Welcome Background */
+
+body {
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 174, 146, 0.18),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 25%,
+            rgba(251, 212, 173, 0.20),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 50% 100%,
+            rgba(248, 215, 193, 0.18),
+            transparent 35%
+        ),
+        #FFF9F5;
+}/* ==============================
+   MINIMAL LUXURY SPARKLE
+   ============================== */
+
+.brainstorm {
+    position: relative;
+    overflow: visible;
+}
+
+/* ประกายหลายจุด */
+.brainstorm::before {
+    content: "✦   ✧        ✦              ✧";
+    position: absolute;
+    top: 15px;
+    left: 5%;
+    width: 90%;
+    height: auto;
+    background: none;
+    filter: none;
+    color: rgba(201, 166, 107, 0.45);
+    font-size: 17px;
+    letter-spacing: 18px;
+    line-height: 1;
+    z-index: 0;
+    pointer-events: none;
+    animation: sparkle 4s ease-in-out infinite;
+}
+
+.brainstorm::after {
+    content: "✧       ✦             ✧       ✦";
+    position: absolute;
+    right: 3%;
+    bottom: 20px;
+    width: 94%;
+    height: auto;
+    background: none;
+    filter: none;
+    color: rgba(255, 174, 146, 0.40);
+    font-size: 14px;
+    letter-spacing: 25px;
+    line-height: 1;
+    z-index: 0;
+    pointer-events: none;
+    animation: sparkle 4.5s ease-in-out infinite reverse;
+}
+
+/* ประกายวิบวับ */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0.25;
+        transform: scale(0.85);
+    }
+
+    50% {
+        opacity: 0.9;
+        transform: scale(1.08);
+    }
+}/* ==============================
+   LUXURY DECORATIVE LINES
+   ============================== */
+
+.brainstorm {
+    position: relative;
+}
+
+/* เส้นด้านบน */
+.brainstorm::marker {
+    display: none;
+}
+
+.brainstorm .section-label::before,
+.brainstorm .section-label::after {
+    content: "";
+    display: inline-block;
+    width: 55px;
+    height: 1px;
+    vertical-align: middle;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 166, 107, 0.45)
+    );
+}
+
+.brainstorm .section-label::before {
+    margin-right: 15px;
+}
+
+.brainstorm .section-label::after {
+    margin-left: 15px;
+    background: linear-gradient(
+        90deg,
+        rgba(201, 166, 107, 0.45),
+        transparent
+    );
+}
+
+/* เส้นบางใต้ชื่อชมรม */
+.brainstorm > p {
+    position: relative;
+    display: block;
+}
+
+.brainstorm > p::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 1px;
+    margin: 16px auto 0;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 166, 107, 0.35),
+        transparent
+    );
+}/* ==============================
+   WELCOME LUXURY DECORATION
+   ============================== */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* เส้นซ้าย-ขวาของ WELCOME */
+.hero .section-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.hero .section-label::before,
+.hero .section-label::after {
+    content: "";
+    width: 70px;
+    height: 1px;
+    display: block;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 166, 107, 0.55)
+    );
+}
+
+.hero .section-label::after {
+    background: linear-gradient(
+        90deg,
+        rgba(201, 166, 107, 0.55),
+        transparent
+    );
+}
+
+/* เส้นตกแต่งใต้ชื่อชมรม */
+.hero > span::before {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 1px;
+    margin: 0 auto 14px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(201, 166, 107, 0.45),
+        transparent
+    );
+}
+
+/* เพิ่มระยะห่าง BRAINSTORMING กับกล่องเสนอ */
+.brainstorm .section-label {
+    margin-bottom: 30px;
+}/* ขนาดข้อความ Welcome */
+.hero .section-label {
+    font-size: 18px;
+    letter-spacing: 4px;
+}
+
+.hero h2 {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.hero > p:not(.section-label) {
+         font-size: 18px;   
+           font-weight: 400;
+        }/* กรอบ Welcome ขนาดพอดี */
+.hero {
+    max-width: 750px;
+    padding: 40px 30px;
+    margin: 35px auto;
+    border-radius: 24px;
+}/* ✦ ดาวตกทั่วหน้าเว็บ */
+.shooting-stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.shooting-stars span {
+    position: absolute;
+    top: -20px;
+    color: #C9A66B;
+    font-size: 16px;
+    opacity: 0;
+    animation: shootingStar 3s linear infinite;
+}
+
+.shooting-stars span:nth-child(1) {
+    left: 15%;
+    animation-delay: 1s;
+}
+
+.shooting-stars span:nth-child(2) {
+    left: 40%;
+    animation-delay: 4s;
+    font-size: 12px;
+}
+
+.shooting-stars span:nth-child(3) {
+    left: 68%;
+    animation-delay: 2.5s;
+    font-size: 14px;
+}
+
+.shooting-stars span:nth-child(4) {
+    left: 85%;
+    animation-delay: 5s;
+    font-size: 11px;
+}
+
+@keyframes shootingStar {
+    0% {
+        transform: translate(0, -20px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.7;
+    }
+
+    45% {
+        opacity: 0.5;
+    }
+
+    70% {
+        transform: translate(-180px, 500px) rotate(20deg);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-250px, 700px) rotate(25deg);
+        opacity: 0;
+    }
+}

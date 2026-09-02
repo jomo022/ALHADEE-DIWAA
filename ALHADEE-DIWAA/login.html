@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>เข้าสู่ระบบ | ALHADEE DIWAA</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+
+            background: #f7f5f0;
+        }
+
+        .login-box {
+            width: 90%;
+            max-width: 430px;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.08);
+
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        .club-name {
+            margin: 0;
+
+            font-size: 26px;
+        }
+
+        .system-name {
+            margin-top: 8px;
+
+            font-size: 14px;
+
+            letter-spacing: 3px;
+
+            color: #777;
+        }
+
+        .description {
+            margin: 30px 0 20px;
+
+            color: #666;
+
+            line-height: 1.6;
+        }
+
+        label {
+            display: block;
+
+            text-align: left;
+
+            margin-bottom: 8px;
+
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #ddd;
+
+            border-radius: 10px;
+
+            font-size: 16px;
+
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #888;
+        }
+
+        button {
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #222;
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        #message {
+            margin-top: 18px;
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="login-box">
+
+        <div class="logo">
+         <img src="https://chatgpt.com/backend-api/estuary/content?id=file_0000000055e881fab3de818a42ecdf93&ts=496721&p=fs&cid=1&sig=fe42d51604e9a8e4a516b3ded3d8bfae19f34201475c93e1572db0a2eb0b3e21&v=0"
+     alt="AHO Emoji"
+     width="100"
+     height="100">
+        </div>
+
+
+        <h1 class="club-name">
+            ชมรมเยาวชนคนอัลฮาดี
+        </h1>
+
+
+        <div class="system-name">
+            ALHADEE DIWAA
+        </div>
+
+
+        <p class="description">
+            กรอกอีเมลของคุณเพื่อเข้าใช้งานระบบ
+        </p>
+
+
+        <form id="loginForm">
+
+            <label for="email">
+                อีเมล
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="example@email.com"
+                required
+            >
+
+
+            <button type="submit">
+                เข้าใช้งาน
+            </button>
+
+        </form>
+
+
+        <div id="message"></div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+
+const SUPABASE_URL =
+    "https://brlelikwcfihbdwsgtoj.supabase.co";
+
+const SUPABASE_KEY =
+    "sb_publishable_SsUs4hAdKY_oTsn23yCDMA_3XMQUqbN";
+
+const supabaseClient =
+    window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+    );
+
+
+document
+    .getElementById("loginForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const email =
+            document
+            .getElementById("email")
+            .value
+            .toLowerCase()
+            .trim();
+
+        if (!email) {
+            return;
+        }
+
+        // จำอีเมลของผู้ใช้งาน
+        localStorage.setItem("userEmail", email);
+
+        // เข้าเว็บไซต์ทันที
+        window.location.href = "index.html";
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
